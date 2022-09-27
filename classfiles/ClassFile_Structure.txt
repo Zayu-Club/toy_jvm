@@ -1,0 +1,40 @@
+ClassFile {
+    u4             magic;
+    u2             minor_version;
+    u2             major_version;
+    u2             constant_pool_count;
+    cp_info        constant_pool[constant_pool_count-1];
+        cp_info {
+            u1 tag;
+            u1 info[];
+        }
+    u2             access_flags;
+    u2             this_class;
+    u2             super_class;
+    u2             interfaces_count;
+    u2             interfaces[interfaces_count];
+    u2             fields_count;
+    field_info     fields[fields_count];
+    u2             methods_count;
+    method_info    methods[methods_count];
+    u2             attributes_count;
+    attribute_info attributes[attributes_count];
+}
+
+CONSTANT_Class	            7   2|   2 name_index
+CONSTANT_Fieldref	        9   4|   2 class_index 2 name_and_type_index
+CONSTANT_Methodref	        10  4|   2 class_index 2 name_and_type_index
+CONSTANT_InterfaceMethodref	11  4|   2 class_index 2 name_and_type_index
+CONSTANT_String	            8   2|   2 string_index
+CONSTANT_Integer	        3   4|   4 bytes
+CONSTANT_Float	            4   4|   4 bytes
+CONSTANT_Long	            5   8|   4 high_bytes 4 low_bytes
+CONSTANT_Double	            6   8|   4 high_bytes 4 low_bytes
+CONSTANT_NameAndType	    12  4|   2 name_index 2 descriptor_index
+CONSTANT_Utf8	            1   ?|   2 length bytes[length]
+CONSTANT_MethodHandle	    15  1|   1 reference_kind 2 reference_index
+CONSTANT_MethodType	        16  2|   2 descriptor_index
+CONSTANT_Dynamic	        17  4|   2 bootstrap_method_attr_index 2 name_and_type_index
+CONSTANT_InvokeDynamic	    18  4|   2 bootstrap_method_attr_index 2 name_and_type_index
+CONSTANT_Module	            19  2|   2 name_index
+CONSTANT_Package	        20  2|   2 name_index
